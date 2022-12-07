@@ -1,7 +1,7 @@
-import { fileURLToPath } from "url";
-import { resolve } from "pathe";
-import { useLogger, defineNuxtModule, addTemplate, addPlugin } from "@nuxt/kit";
-import defu from "defu";
+import { fileURLToPath } from 'url';
+import { resolve } from 'pathe';
+import { useLogger, defineNuxtModule, addTemplate, addPlugin } from '@nuxt/kit';
+import defu from 'defu';
 
 const logger = useLogger("nuxt:yandex-metrika");
 const CONFIG_KEY = "yandexMetrika";
@@ -10,8 +10,8 @@ const module = defineNuxtModule({
     name: "metrika-nuxt3-rc9",
     configKey: CONFIG_KEY,
     compatibility: {
-      nuxt: ">=3.0.0-rc.9",
-    },
+      nuxt: ">=3.0.0-rc.9"
+    }
   },
   defaults: {
     id: process.env.YANDEX_METRIKA_ID,
@@ -26,38 +26,24 @@ const module = defineNuxtModule({
     type: 0,
     webvisor: false,
     triggerEvent: false,
-    consoleLog: true,
+    consoleLog: true
   },
   setup(options, nuxt) {
     const isDev = nuxt.options.dev && process.env.NODE_ENV !== "production";
     options.isDev = isDev;
-    logger.info(
-      `Initializing Yandex Metrika in ${
-        isDev ? "development" : "production"
-      } mode`
-    );
+    logger.info(`Initializing Yandex Metrika in ${isDev ? "development" : "production"} mode`);
     if (!options.id) {
       logger.error("No id provided.");
     }
-    options.metrikaUrl =
-      (options.useCDN
-        ? "https://cdn.jsdelivr.net/npm/yandex-metrica-watch"
-        : options.metrikaUrl) + "/tag.js";
+    options.metrikaUrl = (options.useCDN ? "https://cdn.jsdelivr.net/npm/yandex-metrica-watch" : options.metrikaUrl) + "/tag.js";
     if (options.useRuntimeConfig) {
-      nuxt.options.runtimeConfig.public[CONFIG_KEY] = defu(
-        nuxt.options.runtimeConfig.public[CONFIG_KEY],
-        options
-      );
+      nuxt.options.runtimeConfig.public[CONFIG_KEY] = defu(nuxt.options.runtimeConfig.public[CONFIG_KEY], options);
     }
     addTemplate({
       filename: "yandex-metrika.options.mjs",
       getContents: () => {
-        return `export default () => Promise.resolve(${JSON.stringify(
-          options.useRuntimeConfig
-            ? nuxt.options.runtimeConfig.public[CONFIG_KEY]
-            : options || {}
-        )})`;
-      },
+        return `export default () => Promise.resolve(${JSON.stringify(options.useRuntimeConfig ? nuxt.options.runtimeConfig.public[CONFIG_KEY] : options || {})})`;
+      }
     });
     const head = nuxt.options.app.head;
     if (!head.link) {
@@ -68,15 +54,15 @@ const module = defineNuxtModule({
       head.link.push({
         href: options.metrikaUrl,
         rel: "preload",
-        as: "script",
+        as: "script"
       });
     }
     const runtimeDir = fileURLToPath(new URL("./runtime", import.meta.url));
     addPlugin({
       src: resolve(runtimeDir, "plugin"),
-      mode: "client",
+      mode: "client"
     });
-  },
+  }
 });
 
 export { module as default };
