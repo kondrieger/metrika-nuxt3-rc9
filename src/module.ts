@@ -30,7 +30,7 @@ const CONFIG_KEY = "yandexMetrika";
 
 export default defineNuxtModule<YandexMetrikaModuleOptions>({
   meta: {
-    name: "yandex-metrika-module-nuxt3",
+    name: "metrika-nuxt3-rc9",
     configKey: CONFIG_KEY,
     compatibility: {
       nuxt: ">=3.0.0-rc.9",

@@ -1,4 +1,5 @@
 # Yandex Metrika for Nuxt 3
+
 [![npm version][npm-version-src]][npm-version-href]
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
 [![License][license-src]][license-href]
@@ -23,12 +24,12 @@ You can set environment variable `NODE_ENV` to `production` for testing in dev m
 
 ## Setup
 
-- Add `yandex-metrika-module-nuxt3` dependency using yarn or npm to your project
-- Add `yandex-metrika-module-nuxt3` to `modules` section of `nuxt.config.js`
+- Add `metrika-nuxt3-rc9` dependency using yarn or npm to your project
+- Add `metrika-nuxt3-rc9` to `modules` section of `nuxt.config.js`
 
 ```js
 {
-  modules: ['yandex-metrika-module-nuxt3']
+  modules: ["metrika-nuxt3-rc9"];
 }
 ```
 
@@ -40,18 +41,18 @@ You can pass options directly in module declaration:
 {
   modules: [
     [
-      'yandex-metrika-module-nuxt3',
+      "metrika-nuxt3-rc9",
       {
-        id: 'XXXXXX',
+        id: "XXXXXX",
         webvisor: true,
         // consoleLog: true,
         // clickmap: true,
         // useCDN: false,
         // trackLinks: true,
         // accurateTrackBounce: true,
-      }
-    ]
-  ]
+      },
+    ],
+  ];
 }
 ```
 
@@ -59,7 +60,7 @@ Or you can specify `yandexMetrika` key:
 
 ```ts
 {
-  modules: ['yandex-metrika-module-nuxt3'],
+  modules: ['metrika-nuxt3-rc9'],
   yandexMetrika: {
     id: 'XXXXXX',
     // ...
@@ -71,7 +72,7 @@ In Nuxt 2.13+, you can also use public runtime config:
 
 ```js
 {
-  modules: ['yandex-metrika-module-nuxt3'],
+  modules: ['metrika-nuxt3-rc9'],
   publicRuntimeConfig: {
     yandexMetrika: {
       id: process.env.YANDEX_METRIKA_ID,
@@ -84,17 +85,18 @@ In Nuxt 2.13+, you can also use public runtime config:
 ## Options
 
 For more information:
+
 - [Documentation for Ya.Metrika](https://yandex.com/support/metrica/code/counter-initialize.html)
 - [hit method](https://yandex.com/support/metrica/objects/hit.html)
 
 | Name                | Default value | Type    | Description                                                                                                                                      |
-|---------------------|---------------|---------|--------------------------------------------------------------------------------------------------------------------------------------------------|
-| accurateTrackBounce | true          | Boolean | Number                                                                                                                                           |Accurate bounce rate The parameter can accept these values:  true — Enable the accurate bounce rate, with a non-bounce event registered after 15000 ms (15 s). false — Don't enable the accurate bounce rate. <N> (integer) — Enable the accurate bounce rate. Non-bounce events are recorded after <N> ms.|
+| ------------------- | ------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| accurateTrackBounce | true          | Boolean | Number                                                                                                                                           | Accurate bounce rate The parameter can accept these values: true — Enable the accurate bounce rate, with a non-bounce event registered after 15000 ms (15 s). false — Don't enable the accurate bounce rate. <N> (integer) — Enable the accurate bounce rate. Non-bounce events are recorded after <N> ms. |
 | childIframe         | false         | Boolean | Whether to record iframe contents without a tag in a child window                                                                                |
 | clickmap            | true          | Boolean | Whether to collect data for a click map                                                                                                          |
 | defer               | false         | Boolean | Whether to disable automatically sending data during tag initialization                                                                          |
-| ecommerce           | false         | Boolean | String                                                                                                                                           | Array|Collect data for e-commerce — Ecommerce.  true — Enable e-commerce data collection. Data is transmitted via a JavaScript array named dataLayer in the global namespace (window.dataLayer) false — Disable Ecommerce data collection. <objectName> (String) — Enable Ecommerce data collection. Data is transmitted via a JavaScript array named <objectName> in the global namespace (window.<objectName>) <array> (Array) — Enable Ecommerce data collection. Data is transmitted via a JavaScript <array>|
-| params              | —             | Object  | Array                                                                                                                                            |Session parameters transmitted during tag initialization To transmit session parameters at any other time, use the params method|
+| ecommerce           | false         | Boolean | String                                                                                                                                           | Array                                                                                                                                                                                                                                                                                                      | Collect data for e-commerce — Ecommerce. true — Enable e-commerce data collection. Data is transmitted via a JavaScript array named dataLayer in the global namespace (window.dataLayer) false — Disable Ecommerce data collection. <objectName> (String) — Enable Ecommerce data collection. Data is transmitted via a JavaScript array named <objectName> in the global namespace (window.<objectName>) <array> (Array) — Enable Ecommerce data collection. Data is transmitted via a JavaScript <array> |
+| params              | —             | Object  | Array                                                                                                                                            | Session parameters transmitted during tag initialization To transmit session parameters at any other time, use the params method                                                                                                                                                                           |
 | userParams          | —             | Object  | Parameters of site users that are transmitted when initializing the tag To transmit user parameters at any other time, use the userParams method |
 | trackHash           | false         | Boolean | Hash tracking in the browser's address bar                                                                                                       |
 | trackLinks          | true          | Boolean | Track clicks on outbound links                                                                                                                   |
@@ -115,11 +117,10 @@ For more information:
 [MIT License](./LICENSE)
 
 <!-- Badges -->
-[npm-version-src]: https://img.shields.io/npm/v/yandex-metrika-module-nuxt3/latest.svg?style=flat-square
-[npm-version-href]: https://npmjs.com/package/yandex-metrika-module-nuxt3
 
-[npm-downloads-src]: https://img.shields.io/npm/dt/yandex-metrika-module-nuxt3.svg?style=flat-square
-[npm-downloads-href]: https://npmjs.com/package/yandex-metrika-module-nuxt3
-
-[license-src]: https://img.shields.io/npm/l/yandex-metrika-module-nuxt3.svg?style=flat-square
-[license-href]: https://npmjs.com/package/yandex-metrika-module-nuxt3
+[npm-version-src]: https://img.shields.io/npm/v/metrika-nuxt3-rc9/latest.svg?style=flat-square
+[npm-version-href]: https://npmjs.com/package/metrika-nuxt3-rc9
+[npm-downloads-src]: https://img.shields.io/npm/dt/metrika-nuxt3-rc9.svg?style=flat-square
+[npm-downloads-href]: https://npmjs.com/package/metrika-nuxt3-rc9
+[license-src]: https://img.shields.io/npm/l/metrika-nuxt3-rc9.svg?style=flat-square
+[license-href]: https://npmjs.com/package/metrika-nuxt3-rc9

@@ -1,15 +1,15 @@
 {
-  "name": "yandex-metrika-module-nuxt3",
+  "name": "metrika-nuxt3-rc9",
   "version": "1.4.8",
   "description": "Add Yandex Metrika to your Nuxt 3 application.",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/digitalcortex/yandex-metrika-module-nuxt3.git"
+    "url": "git+https://github.com/digitalcortex/metrika-nuxt3-rc9.git"
   },
-  "homepage": "digitalcortex/yandex-metrika-module-nuxt3",
+  "homepage": "digitalcortex/metrika-nuxt3-rc9",
   "bugs": {
-    "url": "https://github.com/digitalcortex/yandex-metrika-module-nuxt3/issues"
+    "url": "https://github.com/digitalcortex/metrika-nuxt3-rc9/issues"
   },
   "exports": {
     ".": {

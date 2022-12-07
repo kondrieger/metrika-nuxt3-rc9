@@ -11931,9 +11931,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"yandex-metrika-module-nuxt3@workspace:.":
+"metrika-nuxt3-rc9@workspace:.":
   version: 0.0.0-use.local
-  resolution: "yandex-metrika-module-nuxt3@workspace:."
+  resolution: "metrika-nuxt3-rc9@workspace:."
   dependencies:
     "@nuxt/kit": 3.0.0-rc.9
     "@nuxt/module-builder": latest
