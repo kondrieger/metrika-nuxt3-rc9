@@ -1,23 +1,34 @@
-# Yandex Metrika
+# Yandex Metrika for Nuxt 3
 [![npm version][npm-version-src]][npm-version-href]
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
 [![License][license-src]][license-href]
 
-> Add Yandex Metrika to your Nuxt application.
+## Disclaimer
 
-This plugin automatically sends first page and route change events to Yandex Metrika.
+This package is a fork for those who don't want to wait for the official release of a Yandex Metrika module.
+
+The module was created by Nuxt Community and rewritten by dankerow to support Nuxt 3. All credit belongs to:
+
+- [Official Nuxt Community module for Yandex Metrika](https://github.com/nuxt-community/yandex-metrika-module)
+- [dankerow's fork of Yandex Metrika to support Nuxt 3](https://github.com/dankerow/yandex-metrika-module)
+
+> This package includes precompiled scripts to let people integrate Yandex Metrika into their project. There's no need to compile anything, it is ready to be used out of the box.
+
+## Route change events by default
+
+This module automatically sends first page and route change events to Yandex Metrika.
 
 **Note:** Yandex Metrika is not enabled in dev mode.
 You can set environment variable `NODE_ENV` to `production` for testing in dev mode.
 
 ## Setup
 
-- Add `@nuxtjs/yandex-metrika` dependency to your project
-- Add `@nuxtjs/yandex-metrika` to `modules` section of `nuxt.config.js`
+- Add `yandex-metrika-module-nuxt3` dependency using yarn or npm to your project
+- Add `yandex-metrika-module-nuxt3` to `modules` section of `nuxt.config.js`
 
 ```js
 {
-  modules: ['@nuxtjs/yandex-metrika']
+  modules: ['yandex-metrika-module-nuxt3']
 }
 ```
 
@@ -29,10 +40,11 @@ You can pass options directly in module declaration:
 {
   modules: [
     [
-      '@nuxtjs/yandex-metrika',
+      'yandex-metrika-module-nuxt3',
       {
         id: 'XXXXXX',
         webvisor: true,
+        // consoleLog: true,
         // clickmap: true,
         // useCDN: false,
         // trackLinks: true,
@@ -47,7 +59,7 @@ Or you can specify `yandexMetrika` key:
 
 ```ts
 {
-  modules: ['@nuxtjs/yandex-metrika'],
+  modules: ['yandex-metrika-module-nuxt3'],
   yandexMetrika: {
     id: 'XXXXXX',
     // ...
@@ -59,7 +71,7 @@ In Nuxt 2.13+, you can also use public runtime config:
 
 ```js
 {
-  modules: ['@nuxtjs/yandex-metrika'],
+  modules: ['yandex-metrika-module-nuxt3'],
   publicRuntimeConfig: {
     yandexMetrika: {
       id: process.env.YANDEX_METRIKA_ID,
@@ -94,20 +106,20 @@ For more information:
 ## Development
 
 - Clone this repository
-- Install dependencies using `pnpm install`
-- Run `pnpm dev:prepare` to generate type stubs.
-- Use `pnpm dev` to start [playground](./playground) in development mode.
+- Install dependencies using `yarn install`
+- Run `yarn dev:prepare` to generate type stubs.
+- Use `yarn dev` to start [playground](./playground) in development mode.
 
 ## License
 
 [MIT License](./LICENSE)
 
 <!-- Badges -->
-[npm-version-src]: https://img.shields.io/npm/v/@nuxtjs/yandex-metrika/latest.svg?style=flat-square
-[npm-version-href]: https://npmjs.com/package/@nuxtjs/yandex-metrika
+[npm-version-src]: https://img.shields.io/npm/v/yandex-metrika-module-nuxt3/latest.svg?style=flat-square
+[npm-version-href]: https://npmjs.com/package/yandex-metrika-module-nuxt3
 
-[npm-downloads-src]: https://img.shields.io/npm/dt/@nuxtjs/yandex-metrika.svg?style=flat-square
-[npm-downloads-href]: https://npmjs.com/package/@nuxtjs/yandex-metrika
+[npm-downloads-src]: https://img.shields.io/npm/dt/yandex-metrika-module-nuxt3.svg?style=flat-square
+[npm-downloads-href]: https://npmjs.com/package/yandex-metrika-module-nuxt3
 
-[license-src]: https://img.shields.io/npm/l/@nuxtjs/yandex-metrika.svg?style=flat-square
-[license-href]: https://npmjs.com/package/@nuxtjs/yandex-metrika
+[license-src]: https://img.shields.io/npm/l/yandex-metrika-module-nuxt3.svg?style=flat-square
+[license-href]: https://npmjs.com/package/yandex-metrika-module-nuxt3
