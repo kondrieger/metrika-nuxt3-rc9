@@ -5,11 +5,11 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/digitalcortex/metrika-nuxt3-rc9.git"
+    "url": "git+https://github.com/kondrieger/metrika-nuxt3-rc9.git"
   },
-  "homepage": "digitalcortex/metrika-nuxt3-rc9",
+  "homepage": "kondrieger/metrika-nuxt3-rc9",
   "bugs": {
-    "url": "https://github.com/digitalcortex/metrika-nuxt3-rc9/issues"
+    "url": "https://github.com/kondrieger/metrika-nuxt3-rc9/issues"
   },
   "exports": {
     ".": {
