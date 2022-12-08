@@ -1,13 +1,13 @@
 {
   "name": "metrika-nuxt3-rc9",
-  "version": "1.4.9",
+  "version": "1.4.10",
   "description": "Add Yandex Metrika to your Nuxt 3 application.",
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kondrieger/metrika-nuxt3-rc9.git"
   },
-  "homepage": "kondrieger/metrika-nuxt3-rc9",
+  "homepage": "https://github.com/kondrieger/metrika-nuxt3-rc9",
   "bugs": {
     "url": "https://github.com/kondrieger/metrika-nuxt3-rc9/issues"
   },
